@@ -33,7 +33,8 @@
         "pages": [
           "introduction",
           "introduction/problem",
-          "introduction/solution"
+          "introduction/solution",
+          "introduction/ecosystem-strategy"
         ]
       }
     ],
