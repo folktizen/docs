@@ -1,0 +1,70 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "Folktizen Docs",
+  "colors": {
+    "primary": "#E6A800",
+    "light": "#E6A800",
+    "dark": "#E6A800"
+  },
+  "styling": {
+    "codeblocks": "system"
+  },
+  "background": {
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#000000"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Inter",
+      "weight": 800
+    },
+    "body": {
+      "family": "Inter"
+    }
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Introduction",
+        "pages": [
+          "introduction"
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Waitlist",
+          "href": "https://folktizen.xyz",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.com",
+          "icon": "discord"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/logo-text-dark.png",
+    "dark": "/logo/logo-text-light.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:hey@folktizen.xyz"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/folktizen"
+    }
+  }
+}
