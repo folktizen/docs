@@ -31,7 +31,9 @@
       {
         "group": "Introduction",
         "pages": [
-          "introduction"
+          "introduction",
+          "introduction/problem",
+          "introduction/solution",
         ]
       }
     ],
