@@ -40,6 +40,7 @@
         "group": "Platform Design",
         "pages": [
           "platform/ecosystem-strategy",
+          "platform/technical-architecture",
           "platform/user-journey",
           "platform/revenue-model",
           "platform/tokenomics",

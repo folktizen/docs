@@ -1,0 +1,41 @@
+---
+title: "Technical Architecture Overview"
+description: "Detailed architecture diagram, component breakdown, and integration of cutting-edge Arbitrum technologies"
+---
+
+## High-Level Architecture Diagram
+
+```java
+┌────────────────────────────────────────────────────────────┐
+│                       Frontend (App)                       │
+│  - React.js with Tailwind CSS                              │
+│  - Wagmi + viem for wallet interactions                    │
+│  - ConnectKit for wallet UI                                │
+│  - IPFS for video previews and metadata                    │
+│  - Infinite scroll content feed                            │
+└──────────────┬─────────────────────────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────────────────────────┐
+│                   Application Backend (Node.js)            │
+│  - REST/GraphQL API                                        │
+│  - PostgreSQL for user sessions and metadata               │
+│  - IPFS Pinning (via Pinata or Lighthouse)                 │
+│  - Subgraph Indexer (The Graph / Custom Indexer)           │
+└──────────────┬─────────────────────────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────────────────────────┐
+│                  Smart Contracts (Arbitrum)                │
+│  - Genesis Factory (ERC-721 for memes)                     │
+│  - Bonding Curve Contract (ERC-20 with custom logic)       │
+│  - Graduation Contract (token upgrade & distribution)      │
+│  - FOLK ERC-20 (engagement token & staking)                │
+└──────────────┬─────────────────────────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────────────────────────┐
+│                   Onchain Storage (Arbitrum One)           │
+└────────────────────────────────────────────────────────────┘
+```
+
