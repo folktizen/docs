@@ -1,41 +1,100 @@
 ---
-title: "Technical Architecture Overview"
+title: "Technical Architecture"
 description: "Detailed architecture diagram, component breakdown, and integration of cutting-edge Arbitrum technologies"
 ---
 
 ## High-Level Architecture Diagram
 
-```java
-┌────────────────────────────────────────────────────────────┐
-│                       Frontend (App)                       │
-│  - React.js with Tailwind CSS                              │
-│  - Wagmi + viem for wallet interactions                    │
-│  - ConnectKit for wallet UI                                │
-│  - IPFS for video previews and metadata                    │
-│  - Infinite scroll content feed                            │
-└──────────────┬─────────────────────────────────────────────┘
-               │
-               ▼
-┌────────────────────────────────────────────────────────────┐
-│                   Application Backend (Node.js)            │
-│  - REST/GraphQL API                                        │
-│  - PostgreSQL for user sessions and metadata               │
-│  - IPFS Pinning (via Pinata or Lighthouse)                 │
-│  - Subgraph Indexer (The Graph / Custom Indexer)           │
-└──────────────┬─────────────────────────────────────────────┘
-               │
-               ▼
-┌────────────────────────────────────────────────────────────┐
-│                  Smart Contracts (Arbitrum)                │
-│  - Genesis Factory (ERC-721 for memes)                     │
-│  - Bonding Curve Contract (ERC-20 with custom logic)       │
-│  - Graduation Contract (token upgrade & distribution)      │
-│  - FOLK ERC-20 (engagement token & staking)                │
-└──────────────┬─────────────────────────────────────────────┘
-               │
-               ▼
-┌────────────────────────────────────────────────────────────┐
-│                   Onchain Storage (Arbitrum One)           │
-└────────────────────────────────────────────────────────────┘
+```text
++------------------------------+
+|        Frontend (App)        |
+|------------------------------|
+| - React.js with Tailwind CSS |
+| - Wagmi + viem for wallets   |
+| - ConnectKit for wallet UI   |
+| - IPFS for media previews    |
+| - Infinite scroll feed       |
++--------------+---------------+
+               |
+               v
++------------------------------+
+|     Application Backend      |
+|------------------------------|
+| - Node.js with Express       |
+| - PostgreSQL for metadata    |
+| - IPFS Pinning (Pinata)      |
+| - Subgraph Indexer           |
++--------------+---------------+
+               |
+               v
++------------------------------+
+|     Smart Contracts Layer    |
+|------------------------------|
+| - Genesis Factory (ERC-721)  |
+| - Bonding Curve Contracts    |
+| - Graduation Contracts       |
+| - FOLK ERC-20 Token          |
++--------------+---------------+
+               |
+               v
++------------------------------+
+|      Arbitrum Rollup L2      |
+|------------------------------|
+| - Arbitrum One               |
+| - Stylus-enabled contracts   |
+| - Orbit AppChain potential   |
++------------------------------+
 ```
 
+## Technical Stack Breakdown
+
+**Frontend (User Interface):**
+- **Frameworks:** React.js with Tailwind CSS for responsive design.
+- **Wallet Integration:** Wagmi and viem for seamless wallet connections; ConnectKit for user-friendly wallet UI.
+- **Content Delivery:** IPFS for decentralized storage of video previews and metadata.
+- **User Interaction:** Infinite scroll content feed with filters for Popular, Recent, and Bonded memes.
+
+**Backend / Middleware:**
+- **Server:** Node.js with Express for handling API requests.
+- **Database:** PostgreSQL for managing user sessions and social metadata.
+- **Storage:** IPFS (via Pinata) for storing short-form video files and NFT metadata.
+- **Indexing:** Subgraph or custom indexer to track:
+  - Meme NFT creation
+  - Bonding volume and holders
+  - FOLK reward distribution
+  - Meme graduation status
+
+**Smart Contracts (Solidity on Arbitrum):**
+- **Genesis.sol:** Facilitates the creation of ERC-721 meme NFTs by creators.
+- **BondingCurve.sol:** Implements ERC-20 bonding tokens for each meme, utilizing dynamic pricing functions.
+- **Graduation.sol:** Manages the transition of meme tokens upon reaching specific thresholds (likes, bonding volume).
+- **FOLK.sol:** Serves as the platform-wide utility token, earned through Like-to-Earn and Trade-to-Earn mechanisms.
+
+## Integration of Arbitrum Technologies
+
+To enhance Folktizen's capabilities and align with Arbitrum's ecosystem, the following technologies are integrated:
+
+a. **Arbitrum Stylus:**
+  - **Description:** Allows developers to write smart contracts in traditional programming languages like Rust and C++, interoperable with existing Solidity contracts.
+  - **Benefit:** Enables high-performance, resource-intensive applications with improved efficiency and lower gas costs.
+  - **Reference:** [Arbitrum Stylus](https://arbitrum.io/stylus)
+
+b. **Arbitrum Orbit Framework:**
+  - **Description:** Simplifies application development for Layer-3 (L3) networks, allowing for personalized AppChains.
+  - **Benefit:** Enables Folktizen to create dedicated chains with tailored privacy settings, permissions, and governance mechanisms.
+  - **Reference:** [Arbitrum Orbit](https://arbitrum.io/orbit)
+
+c. **Biconomy Integration:**
+  - **Description:** Provides plug-and-play APIs for gasless transactions and simplified user experiences.
+  - **Benefit:** Users can interact with Folktizen without worrying about gas fees, enhancing accessibility for non-crypto natives.
+  - **Reference:** [Biconomy Gasless Transactions on Arbitrum](https://www.biconomy.io)
+
+d. **Arcana's Chain Abstraction Protocol:**
+  - **Description:** Simplifies cross-chain interactions by unifying balances and allowing gas fee payments in stablecoins like USDC/USDT.
+  - **Benefit:** Streamlines user experience, making Folktizen more accessible and user-friendly.
+  - **Reference:** [Arcana’s Chain Abstraction Protocol](https://developers.moralis.com/chains/arbitrum/)
+
+e. **Moralis APIs:**
+  - **Description:** Offers comprehensive APIs for accessing on-chain data, including token data, transactions, NFT data, and more.
+  - **Benefit:** Accelerates development and deployment of Folktizen by providing essential data and reducing development time.
+  - **Reference:** [Build on Arbitrum with Moralis](https://developers.moralis.com/chains/arbitrum/)
